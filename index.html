@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GekkoGames Network - Minecraft Server Network">
+  <title>GekkoGames Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0a1f44, #0596d7);
+      color: #fff;
+      line-height: 1.6;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 20, 40, 0.6);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav h1 { font-size: 1.8rem; font-weight: 700; }
+    nav ul { display: flex; list-style: none; }
+    nav li { margin-left: 1.5rem; }
+    nav a {
+      color: #fff; text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #4dd0e1; }
+
+    .hero {
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .hero h2 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; margin-bottom: 2rem; }
+    .server-ip {
+      display: inline-block;
+      background: #001428;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-family: monospace;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .server-ip:hover { background: #00bcd4; }
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #00bcd4;
+      color: #001428;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #4dd0e1; }
+
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    section h3 { font-size: 2rem; margin-bottom: 1rem; }
+    section p { max-width: 800px; margin: 0 auto 2rem auto; }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .game-card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      border-radius: 15px;
+    }
+    .game-card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: rgba(0, 20, 40, 0.6);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <h1>GekkoGames Network</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#store">Store</a></li>
+      <li><a href="#discord">Discord</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to GekkoGames Network</h2>
+    <p>Join thousands of players on our Minecraft servers!</p>
+    <div class="server-ip" onclick="copyIP()">play.gekkogames.xyz</div>
+    <br>
+    <a href="#about" class="btn">Get Started</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h3>About Our Network</h3>
+    <p>
+      GekkoGames Network offers a variety of fun and competitive game modes,
+      from Survival to Skyblock and beyond. Our servers are optimized for a lag-free experience.
+    </p>
+  </section>
+
+  <!-- Games Section -->
+  <section id="games">
+    <h3>Our Game Modes</h3>
+    <div class="games">
+      <div class="game-card">
+        <h4>Survival</h4>
+        <p>Classic Minecraft survival with an enhanced economy and claims.</p>
+      </div>
+      <div class="game-card">
+        <h4>Skyblock</h4>
+        <p>Start on your island, build your empire, and compete with others.</p>
+      </div>
+      <div class="game-card">
+        <h4>MiniGames</h4>
+        <p>Fun, fast-paced minigames to play with friends anytime.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section>
+    <h3>Ready to Join?</h3>
+    <div class="server-ip" onclick="copyIP()">play.gekkogames.xyz</div>
+    <p style="margin-top:1rem;">Click to copy and jump in now!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> GekkoGames Network · All Rights Reserved
+  </footer>
+
+  <script>
+    // copy IP to clipboard
+    function copyIP() {
+      navigator.clipboard.writeText('play.gekkogames.xyz');
+      alert('IP copied to clipboard!');
+    }
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

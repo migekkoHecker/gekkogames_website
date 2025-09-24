@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vote for GekkoGames Network - Minecraft Server">
+  <title>Vote · GekkoGames Network</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #0a1f44, #0596d7);
+      color: #fff;
+      line-height: 1.6;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 20, 40, 0.6);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav h1 { font-size: 1.8rem; font-weight: 700; }
+    nav ul { display: flex; list-style: none; }
+    nav li { margin-left: 1.5rem; }
+    nav a {
+      color: #fff; text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #4dd0e1; }
+
+    header {
+      text-align: center;
+      padding: 5rem 2rem 3rem 2rem;
+    }
+    header h2 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
+    header p { font-size: 1.2rem; }
+
+    section {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .vote-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .vote-card {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 2rem;
+      border-radius: 15px;
+    }
+    .vote-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background: #00bcd4;
+      color: #001428;
+      font-weight: 700;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #4dd0e1; }
+
+    footer {
+      background: rgba(0, 20, 40, 0.6);
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <h1>GekkoGames Network</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#games">Games</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="vote.html">Vote</a></li>
+      <li><a href="#discord">Discord</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h2>Vote for GekkoGames Network</h2>
+    <p>Help us grow by voting on these server lists. You’ll earn rewards in-game!</p>
+  </header>
+
+  <!-- Vote Links -->
+  <section>
+    <div class="vote-links">
+      <div class="vote-card">
+        <h3>Eaglercraft Server List</h3>
+        <p>Vote for us on servers.eaglercraft.com</p>
+        <a href="https://example.com/vote1" target="_blank" class="btn">Vote Now</a>
+      </div>
+      <div class="vote-card">
+        <h3>Minecraft Server List</h3>
+        <p>Vote for us on MinecraftServerList.com</p>
+        <a href="https://servers.eaglercraft.com/servers/a54eba00-f7fb-452e-b1b3-b5feb282a84d" target="_blank" class="btn">Vote Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> GekkoGames Network · All Rights Reserved
+  </footer>
+
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

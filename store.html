@@ -28,23 +28,14 @@
     nav h1 { font-size: 1.8rem; font-weight: 700; }
     nav ul { display: flex; list-style: none; }
     nav li { margin-left: 1.5rem; }
-    nav a {
-      color: #fff; text-decoration: none;
-      transition: color 0.3s;
-    }
+    nav a { color: #fff; text-decoration: none; transition: color 0.3s; }
     nav a:hover { color: #4dd0e1; }
 
-    header {
-      text-align: center;
-      padding: 5rem 2rem 3rem 2rem;
-    }
+    header { text-align: center; padding: 5rem 2rem 3rem 2rem; }
     header h2 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; }
     header p { font-size: 1.2rem; }
 
-    section {
-      padding: 3rem 2rem;
-      text-align: center;
-    }
+    section { padding: 3rem 2rem; text-align: center; }
     .store-items {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -56,16 +47,10 @@
       background: rgba(0, 0, 0, 0.3);
       padding: 2rem;
       border-radius: 15px;
+      position: relative;
     }
-    .item-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .price {
-      font-size: 1.1rem;
-      color: #4dd0e1;
-      margin: 0.5rem 0 1rem 0;
-    }
+    .item-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .price { font-size: 1.1rem; color: #4dd0e1; margin: 0.5rem 0 1rem 0; }
     .btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
@@ -77,6 +62,49 @@
       transition: background 0.3s;
     }
     .btn:hover { background: #4dd0e1; }
+    .info-icon {
+      display: inline-block;
+      margin-left: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .info-icon:hover { background: rgba(255,255,255,0.4); }
+
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 100; 
+      left: 0; top: 0;
+      width: 100%; height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.7); 
+    }
+    .modal-content {
+      background-color: #001428;
+      margin: 10% auto; 
+      padding: 2rem;
+      border-radius: 15px;
+      width: 90%; max-width: 500px;
+      text-align: left;
+      color: #fff;
+    }
+    .close {
+      color: #4dd0e1;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover { color: #00bcd4; }
 
     footer {
       background: rgba(0, 20, 40, 0.6);
@@ -117,33 +145,95 @@
         <div class="price">200 shards</div>
         <p>[adding this soon]</p>
         <a href="#" class="btn">Buy Now</a>
+        <span class="info-icon" onclick="openModal('tier1')">i</span>
       </div>
       <div class="item-card">
         <h3>Tier II</h3>
         <div class="price">400 shards</div>
         <p>[adding this soon]</p>
         <a href="#" class="btn">Buy Now</a>
+        <span class="info-icon" onclick="openModal('tier2')">i</span>
       </div>
       <div class="item-card">
         <h3>Tier III</h3>
         <div class="price">600 shards</div>
         <p>[adding this soon]</p>
         <a href="#" class="btn">Buy Now</a>
+        <span class="info-icon" onclick="openModal('tier3')">i</span>
       </div>
       <div class="item-card">
         <h3>Tier IV</h3>
         <div class="price">800 shards</div>
         <p>[adding this soon]</p>
         <a href="#" class="btn">Buy Now</a>
+        <span class="info-icon" onclick="openModal('tier4')">i</span>
       </div>
       <div class="item-card">
         <h3>Tier V</h3>
         <div class="price">1000 shards</div>
         <p>[adding this soon]</p>
         <a href="#" class="btn">Buy Now</a>
+        <span class="info-icon" onclick="openModal('tier5')">i</span>
       </div>
     </div>
   </section>
+
+  <!-- Modals -->
+  <div id="tier1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tier1')">&times;</span>
+      <h3>Tier I Bonuses</h3>
+      <ul>
+        <li>Bonus 1: Extra /kit reward</li>
+        <li>Bonus 2: Custom chat color</li>
+        <li>Bonus 3: Small in-game perks</li>
+      </ul>
+    </div>
+  </div>
+  <div id="tier2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tier2')">&times;</span>
+      <h3>Tier II Bonuses</h3>
+      <ul>
+        <li>Bonus 1: All Tier I perks</li>
+        <li>Bonus 2: Priority queue</li>
+        <li>Bonus 3: Special cosmetic</li>
+      </ul>
+    </div>
+  </div>
+  <div id="tier3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tier3')">&times;</span>
+      <h3>Tier III Bonuses</h3>
+      <ul>
+        <li>Bonus 1: All Tier II perks</li>
+        <li>Bonus 2: /fly permission</li>
+        <li>Bonus 3: Access to exclusive kit</li>
+      </ul>
+    </div>
+  </div>
+  <div id="tier4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tier4')">&times;</span>
+      <h3>Tier IV Bonuses</h3>
+      <ul>
+        <li>Bonus 1: All Tier III perks</li>
+        <li>Bonus 2: Extra monthly rewards</li>
+        <li>Bonus 3: Custom prefix</li>
+      </ul>
+    </div>
+  </div>
+  <div id="tier5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('tier5')">&times;</span>
+      <h3>Tier V Bonuses</h3>
+      <ul>
+        <li>Bonus 1: All Tier IV perks</li>
+        <li>Bonus 2: Exclusive cosmetic effects</li>
+        <li>Bonus 3: VIP support priority</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -153,6 +243,21 @@
   <script>
     // dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target == modal) modal.style.display = "none";
+      });
+    }
   </script>
 
 </body>
